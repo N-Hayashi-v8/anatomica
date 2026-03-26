@@ -1,4 +1,4 @@
-<!doctype html>
+﻿<!doctype html>
 <html lang="ja">
 <head>
     <meta charset="UTF-8">
@@ -9,55 +9,191 @@
     <link rel="stylesheet" href="css/destyle.css">
     <link rel="stylesheet" href="css/style.css">
 </head>
-<body>
+<body class="p-page">
 
-    <header>
+    <header class="l-header p-header">
+        <div class="l-container p-header__inner">
+            <h1 class="p-header__title">
+                <a class="p-header__title-link" href="#">
+                    <img class="p-header__title-image" src="img/title.svg" alt="ANATOMICA">
+                </a>
+            </h1>
+            <span class="p-header__tagline">Clothing and shoes that fit a wide variety of human bodies</span>
 
-        <h1>
-            <a href="#">
-                <img src="img/title.svg" alt="">
-            </a>
-        </h1>
-        <span>Clothing and shoes that fit a wide variety of human bodies</span>
-
-        <nav>
-            <ul>
-                <li><a href="#">ABOUT</a></li>
-                <li><a href="#">COLLECTION</a></li>
-                <li><a href="#">MASTERPIECE</a></li>
-                <li><a href="#">STOCKIST</a></li>
-                <li><a href="#">ONLINE STORE</a></li>
-                <li><a href="#">CONTACT</a></li>
-            </ul>
-        </nav>
+            <nav class="p-nav p-header__nav" aria-label="グローバルナビゲーション">
+                <ul class="p-nav__list">
+                    <li class="p-nav__item"><a class="p-nav__link" href="#">ABOUT</a></li>
+                    <li class="p-nav__item"><a class="p-nav__link" href="#">COLLECTION</a></li>
+                    <li class="p-nav__item"><a class="p-nav__link" href="#">MASTERPIECE</a></li>
+                    <li class="p-nav__item"><a class="p-nav__link" href="#">STOCKIST</a></li>
+                    <li class="p-nav__item"><a class="p-nav__link" href="#">ONLINE STORE</a></li>
+                    <li class="p-nav__item"><a class="p-nav__link" href="#">CONTACT</a></li>
+                </ul>
+            </nav>
+        </div>
     </header>
 
-    <main>
+    <main class="l-main">
 
-        <section>
-            <div>
-                <div>
-                    <h2>ABOUT</h2>
-                    <p>
-                        <span>“伝統で無いものは、すべて盗作である”</span>
-                        <span>– ユージェニオ・ドール</span>
+        <section class="l-section p-about-collection">
+            <div class="l-container p-about-collection__inner">
+                <div class="p-about">
+                    <h2 class="p-about__title">ABOUT</h2>
+                    <p class="p-about__catch">
+                        <span class="p-about__catch-line">“伝統で無いものは、すべて盗作である”</span>
+                        <span class="p-about__catch-line">– ユージェニオ・ドール</span>
                     </p>
-                    <p>
-                        <span>ピエール・フルニエが1994年にフランス・パリでANATOMICAをオープンしたのは、当時メンズシーンから失われていた、または失われつつあった伝統的なヨーロッパのファッションを蘇らせるためだった。歴史と伝統、そして自身によるフィット感に拘った「アナトミカル（解剖学的）」なコレクションを展開。その後、2006年の寺本欣児との出会いによってANATOMICAに新たな方向性が加わる。2人のフィルターを通した、日本のものづくりによるアメリカンテイスト・ガーメントの誕生となる。</span>
-                        <a href="#">VIEW MORE</a>
+                    <p class="p-about__text">
+                        <span class="p-about__text-body">ピエール・フルニエが1994年にフランス・パリでANATOMICAをオープンしたのは、当時メンズシーンから失われていた、または失われつつあった伝統的なヨーロッパのファッションを蘇らせるためだった。歴史と伝統、そして自身によるフィット感に拘った「アナトミカル（解剖学的）」なコレクションを展開。その後、2006年の寺本欣児との出会いによってANATOMICAに新たな方向性が加わる。2人のフィルターを通した、日本のものづくりによるアメリカンテイスト・ガーメントの誕生となる。</span>
+                        <a class="p-about__more" href="#">VIEW MORE</a>
                     </p>
                 </div>
-                <div>
-                    <h3>2026 SPRING & SUMMER COLLECTION</h3>
+
+                <div class="p-collection">
+                    <h3 class="p-collection__title">2026 SPRING &amp; SUMMER COLLECTION</h3>
+
+                    <div class="p-collection__group p-collection__group--mens">
+                        <div class="p-collection__item">
+                            <img class="p-collection__image" src="img/sscc/mens/1.webp" alt="">
+                            <p class="p-collection__caption">SINGLE RAGLAN I / BD SHIRT MADISON PLAID / CHINO II / BAGUETTE TOTE GOAT LEATHER by TEMBEA</p>
+                        </div>
+                        <div class="p-collection__item">
+                            <img class="p-collection__image" src="img/sscc/mens/2.webp" alt="">
+                            <p class="p-collection__caption">USN CAP / CHORE JACKET I / PETER CHAMBRAY</p>
+                        </div>
+                        <div class="p-collection__item">
+                            <img class="p-collection__image" src="img/sscc/mens/3.webp" alt="">
+                            <p class="p-collection__caption">HERCULES PANTS OVERALL</p>
+                        </div>
+                        <div class="p-collection__item">
+                            <img class="p-collection__image" src="img/sscc/mens/4.webp" alt="">
+                            <p class="p-collection__caption">HARRISON SHIRT CHAMBRAY</p>
+                        </div>
+                        <div class="p-collection__item">
+                            <img class="p-collection__image" src="img/sscc/mens/5.webp" alt="">
+                            <p class="p-collection__caption">USAF HELMET BAG M / BIARRITZ / 618 ORIGINAL</p>
+                        </div>
+                        <div class="p-collection__item">
+                            <img class="p-collection__image" src="img/sscc/mens/6.webp" alt="">
+                            <p class="p-collection__caption">SHIRT MADISON PLAID / CHINO II</p>
+                        </div>
+                    </div>
+
+                    <div class="p-collection__group p-collection__group--womens">
+                        <div class="p-collection__item">
+                            <img class="p-collection__image" src="img/sscc/womens/1.webp" alt="">
+                            <p class="p-collection__caption">WAVES CHARLOTTE W/L CLOTH / WAVES PANTSW/L CLOTH</p>
+                        </div>
+                        <div class="p-collection__item">
+                            <img class="p-collection__image" src="img/sscc/womens/2.webp" alt="">
+                            <p class="p-collection__caption">MEGARA DENIM</p>
+                        </div>
+                        <div class="p-collection__item">
+                            <img class="p-collection__image" src="img/sscc/womens/3.webp" alt="">
+                            <p class="p-collection__caption">ANNIE JACKET</p>
+                        </div>
+                        <div class="p-collection__item">
+                            <img class="p-collection__image" src="img/sscc/womens/4.webp" alt="">
+                            <p class="p-collection__caption">POCKET TEE / GLORIA PANTS</p>
+                        </div>
+                        <div class="p-collection__item">
+                            <img class="p-collection__image" src="img/sscc/womens/5.webp" alt="">
+                            <p class="p-collection__caption">FRIDA CHAMBRAY / MOCK NECK TEE S/S</p>
+                        </div>
+                        <div class="p-collection__item">
+                            <img class="p-collection__image" src="img/sscc/womens/6.webp" alt="">
+                            <p class="p-collection__caption">DOLMAN DENIM / 618 MARILYN I</p>
+                        </div>
+                    </div>
                 </div>
             </div>
         </section>
+
+        <section class="l-section p-masterpiece">
+            <div class="l-container p-masterpiece__inner">
+                <h2 class="p-masterpiece__title">MASTERPIECE</h2>
+                <p class="p-masterpiece__lead">“神は細部に宿る” 妥協することなく徹底的にフィッティングを追求し、見えない細部の細部まで拘り抜いて作り上げた、いつまでも廃れることのない不朽の名作たち。ANATOMICAを代表するマスターピースをご紹介します。</p>
+
+                <div class="p-masterpiece__items">
+                    <img class="p-masterpiece__item" src="img/masterpiece/618_original.png" alt="">
+                    <img class="p-masterpiece__item" src="img/masterpiece/chino.png" alt="">
+                    <img class="p-masterpiece__item" src="img/masterpiece/big_a_shirts.png" alt="">
+                    <img class="p-masterpiece__item" src="img/masterpiece/single_raglan.png" alt="">
+                    <img class="p-masterpiece__item" src="img/masterpiece/618_marilyn.png" alt="">
+                    <img class="p-masterpiece__item" src="img/masterpiece/dolman.png" alt="">
+                    <img class="p-masterpiece__item" src="img/masterpiece/atlante_ring.png" alt="">
+                </div>
+            </div>
+        </section>
+
+        <section class="l-section p-info">
+            <div class="l-container p-info__inner">
+                <div class="p-info__top">
+                    <div class="p-blog-instagram">
+                        <h2 class="p-blog-instagram__title">BLOG&amp;INSTAGRAM</h2>
+                        <p class="p-blog-instagram__text">ブランドの最新情報、直営店の取扱商品やスタッフのスタイリング等の情報は、<br>オフィシャルブログや各店舗のインスタグラムをご確認ください。</p>
+
+                        <div class="p-blog-instagram__links">
+                            <div class="p-blog-instagram__group">
+                                <a class="p-blog-instagram__link" href="#">OFFICIAL<br>BLOG</a>
+                                <a class="p-blog-instagram__link" href="#">AOYAMA</a>
+                                <a class="p-blog-instagram__link" href="#">PARIS</a>
+                            </div>
+                            <div class="p-blog-instagram__group">
+                                <a class="p-blog-instagram__link" href="#">OFFICIAL</a>
+                                <a class="p-blog-instagram__link" href="#">SAPPORO</a>
+                            </div>
+                            <div class="p-blog-instagram__group">
+                                <a class="p-blog-instagram__link" href="#">TOKYO</a>
+                                <a class="p-blog-instagram__link" href="#">NAGOYA</a>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="p-online-store">
+                        <h2 class="p-online-store__title">ONLINE STORE</h2>
+                        <p class="p-online-store__text">ANATOMICAの公式オンラインショップでは、メンズ・レディース共に定番アイテムから<br>シーズン限定アイテムまで幅広く、アイテム数豊富に取り扱っております。</p>
+                        <img class="p-online-store__image" src="img/onlinestore/onlinestore_v.png" alt="">
+                    </div>
+                </div>
+
+                <div class="p-info__bottom">
+                    <div class="p-stockist">
+                        <h2 class="p-stockist__title">STOCKIST</h2>
+                        <p class="p-stockist__text">日本国内・海外の直営店、及びANATOMICAの取り扱い店舗をご案内します。</p>
+                        <a class="p-stockist__more" href="#">VIEW MORE</a>
+                        <img class="p-stockist__image" src="img/stockist/stockist.webp" alt="">
+                    </div>
+
+                    <div class="p-contact">
+                        <img class="p-contact__image" src="img/stockist/contact.webp" alt="">
+                        <h2 class="p-contact__title">CONTACT</h2>
+                        <p class="p-contact__text">ANATOMICAのお問い合わせにつきましては、<br>CONTACTページよりお願いします。</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
     </main>
 
-    <footer>
+    <footer class="l-footer p-footer">
+        <div class="l-container p-footer__inner">
+            <nav class="p-nav p-footer__nav" aria-label="フッターナビゲーション">
+                <ul class="p-nav__list">
+                    <li class="p-nav__item"><a class="p-nav__link" href="#">ABOUT</a></li>
+                    <li class="p-nav__item"><a class="p-nav__link" href="#">COLLECTION</a></li>
+                    <li class="p-nav__item"><a class="p-nav__link" href="#">MASTERPIECE</a></li>
+                    <li class="p-nav__item"><a class="p-nav__link" href="#">STOCKIST</a></li>
+                    <li class="p-nav__item"><a class="p-nav__link" href="#">ONLINE STORE</a></li>
+                    <li class="p-nav__item"><a class="p-nav__link" href="#">CONTACT</a></li>
+                </ul>
+            </nav>
 
-
+            <img class="p-footer__logo" src="img/logo.svg" alt="ANATOMICA">
+            <p class="p-footer__copyright">Copyright &copy;35summers co., ltd. All Rights Reserved.</p>
+        </div>
     </footer>
+
     <script src="https://code.jquery.com/jquery-3.7.1.min.js" integrity="sha256-/JqT3SQfawRcv/BIHPThkBvs0OEvtFFmqPF/lYI/Cxo=" crossorigin="anonymous"></script>
     <script src="js/main.js"></script>
 </body>
