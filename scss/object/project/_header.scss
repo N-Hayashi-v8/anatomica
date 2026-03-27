@@ -1,0 +1,30 @@
+@use "../../foundation/variables" as v;
+
+.p-header{
+    margin-top: v.$space-md;
+    border-top: 4px solid v.$color-text;
+
+    &__inner{
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        padding-top: 2px;
+    }
+
+    &__body{
+        width: 100%;
+        border-top: 1px solid v.$color-text;
+        border-bottom: 1px solid v.$color-text;
+        padding: v.$space-lg 0;
+    }
+
+    &__tagline{
+        font-size: v.$fs-12;
+        padding-top: v.$space-xs;
+    }
+
+    &__nav{
+        padding: v.$space-md 0;
+        width: 100%;
+    }
+}

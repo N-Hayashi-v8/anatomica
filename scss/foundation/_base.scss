@@ -1,0 +1,17 @@
+@use "variables" as v;
+
+body{
+    font-family: v.$font-base;
+    color: v.$color-text;
+    background-color: v.$color-bg;
+}
+
+a{
+    &:hover{
+        color: v.$color-link-hover;
+    }
+}
+
+img{
+    max-width: 100%;
+}
