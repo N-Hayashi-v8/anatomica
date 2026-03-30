@@ -1,10 +1,5 @@
 # todo
 
-## 0326
-
-- [x] scss土台作成
-- [x] headerのborderの長さ調整
-
 ## 0330
 
 - [x] p-header: border幅修正（margin: 0 40px）
@@ -15,7 +10,7 @@
 ## next
 
 - [ ] p-about のスタイル実装
-- [ ] p-collection のスタイル実装（mens/womensグリッド）
+- [ ] p-collection のスタイル実装（mens/womansグリッド）
 - [ ] p-masterpiece のスタイル実装
 - [ ] p-blog-instagram のスタイル実装
 - [ ] p-online-store のスタイル実装
