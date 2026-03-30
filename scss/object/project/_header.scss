@@ -1,21 +1,27 @@
 @use "../../foundation/variables" as v;
 
 .p-header{
-    margin-top: v.$space-md;
-    border-top: 4px solid v.$color-text;
 
-    &__inner{
-        display: flex;
-        flex-direction: column;
-        align-items: center;
-        padding-top: 2px;
-    }
+    margin: v.$space-md v.$content-side-padding-pc 0;
+    border-top: 4px solid v.$color-text;
 
     &__body{
         width: 100%;
         border-top: 1px solid v.$color-text;
         border-bottom: 1px solid v.$color-text;
-        padding: v.$space-lg 0;
+        padding: 24px 0;
+        margin-top: 2px;
+        margin-bottom: 2px;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
+
+    &__title{
+        &-image{
+            width: 260px;
+            height: auto;
+        }
     }
 
     &__tagline{
@@ -26,5 +32,10 @@
     &__nav{
         padding: v.$space-md 0;
         width: 100%;
+        border-top: 1px solid v.$color-text;
+        border-bottom: 1px solid v.$color-text;
+        display: flex;
+        align-items: center;
+        justify-content: center;
     }
 }

@@ -1,0 +1,44 @@
+@use "../../foundation/variables" as v;
+
+.p-nav{
+    &__list{
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+
+    &__item{
+        &::before{
+            content: "|";
+            padding: 0 20px;
+        }
+        &:first-child::before{
+            display: none;
+        }
+    }
+
+    &__link{
+        font-size: 12px;
+        letter-spacing: 0.2em;
+    }
+
+    &__lang{
+        display: flex;
+        align-items: center;
+        gap: v.$space-2xs;
+        margin-left: 20px;
+    }
+
+    &__lang-btn{
+        background: none;
+        border: none;
+        cursor: pointer;
+        font-size: 12px;
+        letter-spacing: 0.2em;
+        color: inherit;
+
+        &.is-active{
+            color: v.$color-link-hover;
+        }
+    }
+}
