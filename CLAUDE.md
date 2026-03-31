@@ -62,3 +62,9 @@
 - 現在取り組んでいるファイル名と作業内容
 - 未解決のエラーや確認待ち事項
 - 直前に合意した方針
+
+## Environment
+
+- OS: Windows
+- Editor: VSCode
+- Shell: PowerShell（またはGit Bash）

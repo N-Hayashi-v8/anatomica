@@ -1,0 +1,72 @@
+@use "../../foundation/variables" as v;
+
+@keyframes line-grow {
+    from { transform: scaleX(0); }
+    to   { transform: scaleX(1); }
+}
+
+.p-about{
+    flex: 0 0 320px;
+
+    &__title{
+        font-size: 5rem;
+        font-weight: 700;
+        letter-spacing: 0.05em;
+        line-height: 1;
+    }
+
+    &__catch{
+        margin-top: 24px;
+        font-size: 0.75rem;
+        font-weight: 700;
+    }
+
+    &__catch-line{
+        display: block;
+        &:last-child{
+            text-align: right;
+        }
+    }
+
+    &__text{
+        margin-top: 24px;
+        font-size: 0.75rem;
+        font-weight: 700;
+        line-height: 1.9;
+    }
+
+    &__text-body{
+        display: block;
+    }
+
+    &__more{
+        display: flex;
+        align-items: center;
+        justify-content: flex-end;
+        gap: 16px;
+        margin-top: 16px;
+        font-size: 0.75rem;
+        letter-spacing: 0.1em;
+        text-decoration: none;
+        color: inherit;
+
+        &::before{
+            content: "";
+            width: 40px;
+            height: 1px;
+            background-color: currentColor;
+            transform-origin: left;
+        }
+
+        &:hover::before{
+            animation: line-grow 0.4s ease forwards;
+        }
+    }
+
+    &__logo{
+        display: block;
+        width: 100%;
+        height: auto;
+        margin-top: 40px;
+    }
+}

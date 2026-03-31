@@ -1,0 +1,57 @@
+@use "../../foundation/variables" as v;
+
+.p-masterpiece{
+    &__inner{
+        display: grid;
+        grid-template-columns: auto 1fr;
+        grid-template-areas: 
+            "title lead"
+            "items items";
+        align-items: start;
+        column-gap: 40px;
+        row-gap: 24px;
+    }
+
+    &__title{
+        grid-area: title;
+        font-size: 7rem;
+        font-weight: 700;
+        letter-spacing: 0.05em;
+        line-height: 1;
+    }
+
+    &__lead{
+        grid-area: lead;
+        font-size: 0.75rem;
+        line-height: 1.9;
+    }
+
+    &__items{
+        grid-area: items;
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+        gap: 4px;
+        grid-template-areas: 
+            "original chino   shirts"
+            "original raglan  marilyn"
+            "dolman   atlante atlante";
+    }
+
+    &__item{
+        display: block;
+        width: 100%;
+        height: 100%;
+        object-fit: contain;
+
+        &:nth-child(1){
+            grid-area: original;
+        }
+        &:nth-child(2) { grid-area: chino; }
+        &:nth-child(3) { grid-area: shirts; }
+        &:nth-child(4) { grid-area: raglan; }
+        &:nth-child(5) { grid-area: marilyn; }
+        &:nth-child(6) { grid-area: dolman; }
+        &:nth-child(7) { grid-area: atlante; }
+
+    }
+}

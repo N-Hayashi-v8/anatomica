@@ -2,7 +2,7 @@
 
 .p-header{
 
-    margin: v.$space-md v.$content-side-padding-pc 0;
+    margin: 16px v.$content-side-padding-pc 0;
     border-top: 4px solid v.$color-text;
 
     &__body{
@@ -25,12 +25,12 @@
     }
 
     &__tagline{
-        font-size: v.$fs-12;
-        padding-top: v.$space-xs;
+        font-size: 0.75rem;
+        padding-top: 8px;
     }
 
     &__nav{
-        padding: v.$space-md 0;
+        padding: 16px 0;
         width: 100%;
         border-top: 1px solid v.$color-text;
         border-bottom: 1px solid v.$color-text;

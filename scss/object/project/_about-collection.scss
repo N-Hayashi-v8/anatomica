@@ -1,0 +1,8 @@
+@use "../../foundation/variables" as v;
+
+.p-about-collection{
+    &__inner{
+        display: flex;
+        gap: 40px;
+    }
+}
