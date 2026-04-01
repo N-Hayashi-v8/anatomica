@@ -2,7 +2,8 @@
 
 .p-about-collection{
     &__inner{
+        max-width: v.$section-max-width;
         display: flex;
-        gap: 40px;
+        gap: 0;
     }
 }

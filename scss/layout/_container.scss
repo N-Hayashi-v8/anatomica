@@ -1,8 +1,6 @@
 @use "../foundation/variables" as v;
 
 .l-container{
-    max-width: v.$content-max-width;
-    margin-right: auto;
-    margin-left: auto;
     padding: 0 v.$content-side-padding-pc;
+    margin: 0 auto;
 }

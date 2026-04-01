@@ -6,7 +6,9 @@
 }
 
 .p-about{
-    flex: 0 0 320px;
+    flex: 0 0 400px;
+    padding-right: 40px;
+    border-right: 1px solid v.$color-text;
 
     &__title{
         font-size: 5rem;
