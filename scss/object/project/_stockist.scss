@@ -1,0 +1,60 @@
+@use "../../foundation/variables" as v;
+
+@keyframes line-grow {
+    from { transform: scaleX(0); }
+    to   { transform: scaleX(1); }
+}
+
+
+.p-stockist{
+
+    padding-bottom: 40px;
+    border-bottom: 1px solid v.$color-text;
+
+    &__title{
+        font-size: 3rem;
+        font-weight: 700;
+        line-height: 1;
+        letter-spacing: 0.05em;
+    }
+
+    &__text{
+        margin-top: 24px;
+        font-size: 0.75rem;
+        font-weight: 700;
+        line-height: 1.9;
+    }
+
+    &__more{
+        display: flex;
+        align-items: center;
+        justify-content: flex-end;
+        gap: 16px;
+        margin-top: 24px;
+        font-size: 0.75rem;
+        letter-spacing: 0.1em;
+        text-decoration: none;
+        color: inherit;
+
+        &::before{
+            content: "";
+            width: 40px;
+            height: 1px;
+            background-color: currentColor;
+            transform-origin: left;
+        }
+
+        &:hover::before{
+            animation: line-grow 0.4s ease forwards;
+        }
+    }
+
+    &__image{
+        display: block;
+        width: 100%;
+        height: auto;
+        margin-top: 24px;
+    }
+
+
+}

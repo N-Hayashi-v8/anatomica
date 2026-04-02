@@ -1,0 +1,21 @@
+@use "../../foundation/variables" as v;
+
+.p-info{
+    &__inner{
+        display: flex;
+        max-width: v.$section-max-width;
+    }
+
+    &__top{
+        flex: 1;
+        padding-right: 40px;
+        border-right: 1px solid v.$color-text;
+    }
+
+    &__bottom{
+        flex: 0 0 30%;
+        padding-left: 40px;
+        display: flex;
+        flex-direction: column;
+    }
+}

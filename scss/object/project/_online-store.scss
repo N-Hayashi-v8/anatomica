@@ -1,0 +1,26 @@
+@use "../../foundation/variables" as v;
+
+.p-online-store{
+    padding-top: 40px;
+
+    &__title{
+        font-size: 6rem;
+        font-weight: 700;
+        line-height: 1;
+        letter-spacing: 0.05em;
+    }
+
+    &__text{
+        margin-top: 24px;
+        font-size: 0.75rem;
+        font-weight: 700;
+        line-height: 1.9;
+    }
+
+    &__image{
+        display: block;
+        width: 100%;
+        height: auto;
+        margin-top: 24px;
+    }
+}

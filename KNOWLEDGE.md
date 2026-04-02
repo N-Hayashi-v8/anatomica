@@ -59,3 +59,43 @@ grid-auto-flow: column;
 grid-auto-columns: calc((100% - gap * (列数-1)) / 列数);
 overflow-x: auto;
 ```
+
+---
+
+## CSS Grid で要素を重ねる（overlay レイアウト）
+
+### 問題
+
+`position: absolute` + `bottom: XX%` で画像上にテキストをオーバーレイすると、画像サイズやブラウザ幅が変わったときに位置がズレる。
+
+### 解決
+
+`display: grid` で全子要素を同セルに重ね、`align-self` / `justify-self` で位置を制御する。
+
+```scss
+.parent {
+    display: grid;
+
+    &__image,
+    &__body {
+        grid-area: 1 / 1; // 同セルに重ねる
+    }
+
+    &__image {
+        display: block;
+        width: 100%;
+        height: auto;
+    }
+
+    &__body {
+        align-self: center;   // 縦中央
+        justify-self: center; // 横中央
+    }
+}
+```
+
+### 注意点
+
+- 画像サイズに追随するためコンテナに固定高さ不要
+- テキスト群をまとめて中央配置したい場合は `__body` 等のラッパー要素で囲む（個別要素を別々に `grid-area: 1/1` にすると相互の位置調整が難しくなる）
+- `z-index` は通常不要（後続要素が自然に上に積まれる）

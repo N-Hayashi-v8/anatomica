@@ -1,0 +1,41 @@
+@use "../../foundation/variables" as v;
+
+.p-contact{
+    padding-top: 40px;
+
+    display: grid;
+
+    &__image,
+    &__body{
+        grid-area: 1 / 1;
+    }
+
+    &__image{
+        display: block;
+        width: 100%;
+        height: auto;
+    }
+
+    &__body{
+        align-self: center;
+        justify-self: center;
+        padding: 0 16px;
+    }
+
+    &__title{
+        font-size: 3.5rem;
+        font-weight: 700;
+        color: v.$color-white;
+        letter-spacing: 0.05em;
+        line-height: 1;
+    }
+
+    &__text{
+        margin-top: 8px;
+        font-size: 0.75rem;
+        font-weight: 700;
+        line-height: 1.9;
+        color: v.$color-white;
+        text-align: center;
+    }
+}

@@ -18,11 +18,14 @@
 - [x] p-blog-instagram: HTMLにリンク追加（YOKOHAMA / KYOTO / ARKEOS CLUB）・ハンドル名追加
 - [x] p-blog-instagram: Instagramアイコンをインラインsvg化（currentColor対応）
 
+## 0402
+
+- [x] p-blog-instagram のスタイル実装
+- [x] p-stockist のスタイル実装
+- [x] p-contact のスタイル実装（CSS Grid overlay + __body wrapper）
+
 ## next
 
 - [-] p-masterpiece の行高調整（画像アスペクト比の都合で完全再現断念・現状維持）
-- [ ] p-blog-instagram のスタイル実装
 - [ ] p-online-store のスタイル実装
-- [ ] p-stockist のスタイル実装
-- [ ] p-contact のスタイル実装
 - [ ] p-footer のスタイル実装
