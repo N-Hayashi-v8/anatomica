@@ -1,6 +1,14 @@
 @use "../foundation/variables" as v;
 
 .l-section{
-    padding: 40px 0;
-    border-bottom: 1px solid v.$color-text;
+    padding: 40px 0 0;
+    position: relative;
+
+    &::after{
+        content: "";
+        display: block;
+        border-bottom: 1px solid v.$color-text;
+        // margin-top がセクション下余白を担う（下は次セクションの padding-top に委ねる）
+        margin: 40px v.$content-side-padding-pc 0;
+    }
 }

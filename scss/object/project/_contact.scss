@@ -5,21 +5,51 @@
 
     display: grid;
 
-    &__image,
+    &__image-wrap,
     &__body{
         grid-area: 1 / 1;
+    }
+
+    &__image-wrap{
+        position: relative;
+        overflow: hidden;
+
+        &::after{
+            content: "";
+            position: absolute;
+            inset: 0;
+            background: #000;
+            transform: translateX(-100%);
+        }
     }
 
     &__image{
         display: block;
         width: 100%;
         height: auto;
+        opacity: 0;
     }
 
     &__body{
         align-self: center;
         justify-self: center;
         padding: 0 16px;
+        z-index: 2;
+        opacity: 0;
+    }
+
+    &.is-revealed {
+        .p-contact__image-wrap::after{
+            animation: wipe-reveal 0.8s ease forwards;
+        }
+
+        .p-contact__image{
+            animation: fade-reveal 0.8s ease forwards;
+        }
+
+        .p-contact__body{
+            animation: fade-reveal 0.8s ease 0.2s both;
+        }
     }
 
     &__title{
@@ -37,5 +67,17 @@
         line-height: 1.9;
         color: v.$color-white;
         text-align: center;
+    }
+
+    &::after{
+        content: "";
+        grid-area: 1 / 1;
+        background-color: rgba(255,255,255,0);
+        transition: background-color 0.3s ease;
+        z-index: 1;
+    }
+
+    &:hover::after{
+        background-color: rgba(255,255,255,0.3);
     }
 }

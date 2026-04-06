@@ -18,6 +18,20 @@ $(window).on('load', function(){
         collectionObserver.observe(this);
     });
 
+    var infoObserver = new IntersectionObserver(function(entries){
+        entries.forEach(function(entry){
+            if(!entry.isIntersecting) return;
+            var $target = $(entry.target);
+            var $parent = $target.closest('.p-contact');
+            ($parent.length ? $parent : $target).addClass('is-revealed');
+            infoObserver.unobserve(entry.target);
+        });
+    },{ threshold: 0.1});
+
+    $('.p-online-store__image-wrap, .p-stockist__image-wrap, .p-contact__image-wrap').each(function() {
+        infoObserver.observe(this);
+    });
+
     $('.p-masterpiece__item').on('mouseenter', function(){
         $(this).attr('src', $(this).attr('src').replace('.png', '_red.png'));
     }).on('mouseleave', function(){

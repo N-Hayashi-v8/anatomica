@@ -1,0 +1,13 @@
+@keyframes wipe-reveal {
+    0%   { transform: translateX(-100%); }
+    45%  { transform: translateX(0); }
+    55%  { transform: translateX(0); }
+    100% { transform: translateX(100%); }
+}
+
+@keyframes fade-reveal {
+    0%  { opacity: 0; }
+    44% { opacity: 0; }
+    45% { opacity: 1; }
+    100%{ opacity: 1; }
+}

@@ -43,36 +43,6 @@
     }
 
 
-    @keyframes collection-wipe{
-        0%{
-            transform: translateX(-100%);
-        }
-        45%{
-            transform: translateX(0);
-        }
-        55%{
-            transform: translateX(0);
-        }
-        100%{
-            transform: translateX(100%);
-        }
-    }
-
-    @keyframes collection-img-reveal{
-        0%{
-            opacity: 0;
-        }
-        44%{
-            opacity: 0;
-        }
-        45%{
-            opacity: 1;
-        }
-        100%{
-            opacity: 1;
-        }
-    }
-
     &__item{
         position: relative;
     }
@@ -96,11 +66,11 @@
 
     &__item.is-revealed &__image-wrap{
         &::after{
-            animation: collection-wipe 0.8s ease forwards;
+            animation: wipe-reveal 0.8s ease forwards;
         }
 
         .p-collection__image{
-            animation: collection-img-reveal 0.8s ease forwards;
+            animation: fade-reveal 0.8s ease forwards;
         }
     }
 

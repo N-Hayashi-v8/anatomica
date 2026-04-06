@@ -99,3 +99,113 @@ overflow-x: auto;
 - 画像サイズに追随するためコンテナに固定高さ不要
 - テキスト群をまとめて中央配置したい場合は `__body` 等のラッパー要素で囲む（個別要素を別々に `grid-area: 1/1` にすると相互の位置調整が難しくなる）
 - `z-index` は通常不要（後続要素が自然に上に積まれる）
+
+---
+
+## 擬似要素の競合回避（::before と ::after の使い分け）
+
+### 問題
+
+ワイプアニメーション（黒マスクのスライド）とホバー白マスクを同じ要素に乗せようとすると、両方が `::after` を要求して競合する。
+
+### 解決
+
+役割を `::before` と `::after` に分離する。
+
+```scss
+&__image-wrap {
+    position: relative;
+    overflow: hidden;
+
+    // ワイプ用（z-index: 1）
+    &::before {
+        content: "";
+        position: absolute;
+        inset: 0;
+        background: #000;
+        transform: translateX(-100%);
+        z-index: 1;
+    }
+
+    // ホバーマスク用（z-index: 2 で上に重ねる）
+    &::after {
+        content: "";
+        position: absolute;
+        inset: 0;
+        background-color: rgba(255,255,255,0);
+        transition: background-color 0.3s ease;
+        z-index: 2;
+    }
+
+    &:hover::after {
+        background-color: rgba(255,255,255,0.3);
+    }
+}
+```
+
+### 補足
+
+- 1つの要素に持てる擬似要素は `::before` と `::after` の2つまで
+- 3つ以上の重ね効果が必要な場合はラッパー要素を追加する
+
+---
+
+## animation-fill-mode: both（delay 中の初期状態維持）
+
+### 問題
+
+`animation-delay` を指定すると、delay 中は animation が始まる前の状態（`opacity: 1` など）に戻ってしまう。
+
+### 解決
+
+`animation-fill-mode: both` を指定する。`forwards`（終了後の状態を維持）と `backwards`（delay 中も `from` の状態を適用）を合わせた指定。
+
+```scss
+// delay 中も opacity: 0 を維持したい場合
+animation: fade-reveal 0.8s ease 0.2s both;
+//                                    ^^^^ forwards + backwards
+```
+
+### 補足
+
+- `forwards` だけだと delay 中に一瞬表示されてしまう
+- delay ありのアニメーションには基本的に `both` を使う
+
+---
+
+## IntersectionObserver で親要素に is-revealed を付与するパターン
+
+### 問題
+
+画像（`__image-wrap`）を観測対象にしつつ、別要素（テキスト等）も同タイミングでアニメーションさせたい。観測対象ごとに `is-revealed` を個別付与すると、テキスト側へのセレクタが兄弟またぎになりスパゲティ化する。
+
+### 解決
+
+`closest()` で共通の親要素を取得し、親に `is-revealed` を付与。CSS は親の状態変化として子要素をまとめて制御する。
+
+```js
+var infoObserver = new IntersectionObserver(function(entries){
+    entries.forEach(function(entry){
+        if(!entry.isIntersecting) return;
+        var $target = $(entry.target);
+        var $parent = $target.closest('.p-contact');
+        // .p-contact 内なら親に、それ以外は自身に付与
+        ($parent.length ? $parent : $target).addClass('is-revealed');
+        infoObserver.unobserve(entry.target);
+    });
+},{ threshold: 0.1});
+```
+
+```scss
+// CSS 側は親の .is-revealed 配下にまとめる
+.p-contact.is-revealed {
+    .p-contact__image-wrap::after { animation: wipe-reveal 0.8s ease forwards; }
+    .p-contact__image            { animation: fade-reveal 0.8s ease forwards; }
+    .p-contact__body             { animation: fade-reveal 0.8s ease 0.2s both; }
+}
+```
+
+### 補足
+
+- 観測対象（`__image-wrap`）と `is-revealed` を付与する要素（`.p-contact`）を分けることで、CSS の構造がフラットに保てる
+- 同じ Observer で複数コンポーネントを扱う場合、`closest()` の引数を変えて条件分岐する

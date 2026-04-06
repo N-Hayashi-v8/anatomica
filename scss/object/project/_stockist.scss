@@ -49,11 +49,38 @@
         }
     }
 
+    &__image-wrap{
+        position: relative;
+        overflow: hidden;
+        margin-top: 24px;
+
+        .p-stockist__image{
+            opacity: 0;
+        }
+
+        &::after{
+            content: "";
+            position: absolute;
+            inset: 0;
+            background: #000;
+            transform: translateX(-100%);
+        }
+
+        &.is-revealed{
+            &::after{
+                animation: wipe-reveal 0.8s ease forwards;
+            }
+
+            .p-stockist__image{
+                animation: fade-reveal 0.8s ease forwards;
+            }
+        }
+    }
+
     &__image{
         display: block;
         width: 100%;
         height: auto;
-        margin-top: 24px;
     }
 
 
