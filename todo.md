@@ -3,6 +3,9 @@
 ## 次回以降
 
 - [ ] 子ページの作成
+  - [x] about.html — HTML構造・p-about-lead SCSS 完了
+  - [ ] about.html — p-brand-history SCSS 実装中（grid 設計まで完了）
+  - [ ] about.html — p-key-person SCSS 未着手
 
 ## 完了済み（ログ）
 

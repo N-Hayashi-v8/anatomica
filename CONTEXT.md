@@ -8,9 +8,9 @@ Claude との作業引き継ぎ用メモ。新しい環境でセッションを�
 
 anatomica の模写コーディング。学習目的。
 
-## 現状（2026-04-06 時点）
+## 現状（2026-04-07 時点）
 
-トップページの実装が完了。次回から**子ページの作成**に入る。
+トップページの実装が完了。**子ページ about.html の作成中**。
 
 ### 完了済みコンポーネント
 
@@ -21,6 +21,13 @@ anatomica の模写コーディング。学習目的。
 - スクロール連動ワイプアニメーション（wipe-reveal / fade-reveal）全域適用
 - ホバー白マスク（CONTACT / ONLINE STORE）
 - JS・SCSS のリファクタリング・不整合整理
+
+### about.html 進捗
+
+- HTML 構造: 完了（p-about-lead / p-brand-history / p-key-person）
+- `_about-page.scss`: p-about-lead 完了
+- `_brand-history.scss`: grid 設計まで完了（`repeat(4, 1fr)` / gap 20px）、__year・__subtitle レイアウトは次回
+- p-key-person: 未着手
 
 ---
 
