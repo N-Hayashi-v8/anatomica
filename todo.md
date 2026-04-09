@@ -3,9 +3,8 @@
 ## 次回以降
 
 - [ ] 子ページの作成
-  - [x] about.html — HTML構造・p-about-lead SCSS 完了
-  - [ ] about.html — p-brand-history SCSS 実装中（grid 設計まで完了）
-  - [ ] about.html — p-key-person SCSS 未着手
+  - [x] about.html — 完成
+  - [ ] masterpiece.html — 未着手
 
 ## 完了済み（ログ）
 
@@ -20,3 +19,4 @@
 - CONTACT テキストをアニメーションに連動
 - keyframes を `_animations.scss` に切り出しリネーム（wipe-reveal / fade-reveal）
 - JS・SCSS の細かい不整合を整理
+- about.html — p-about-lead / p-brand-history / p-key-person 実装完了

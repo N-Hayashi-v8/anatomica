@@ -1,6 +1,6 @@
 @use "../../foundation/variables" as v;
 
-.p-brand-history{
+.p-key-person{
 
     &__inner{
         max-width: v.$section-max-width;
@@ -24,51 +24,23 @@
 
     &__grid{
         display: grid;
-        grid-template-columns: repeat(4, 1fr);
-        gap: 20px;
+        grid-template-columns: repeat(2, 1fr);
+        gap: 40px;
     }
 
     &__item{
-        padding: 20px 0 0;
-    }
-
-    &__head{
         display: flex;
-        align-items: center;
-        gap: 20px;
-        padding-bottom: 16px;
-        margin-bottom: 16px;
-        border-bottom: 1px solid v.$color-text;
-    }
-
-    &__year{
-        font-size: 40px;
-        font-weight: 700;
-        letter-spacing: 0.02em;
-        line-height: 1;
-        flex-shrink: 0;
-    }
-
-    &__subtitle{
-        font-size: 12px;
-        font-weight: 700;
-        letter-spacing: 0.02em;
-        line-height: 1;
-    }
-
-    &__text{
-        font-size: 14px;
-        font-weight: 400;
-        line-height: 2;
-        letter-spacing: 0.02em;
+        gap: 40px;
+        align-items: flex-start;
+        margin: 32px 0;
     }
 
     &__image-wrap{
-        margin-top: 16px;
+        flex: 0 0 45%;
         position: relative;
         overflow: hidden;
 
-        .p-brand-history__image{
+        .p-key-person__image{
             opacity: 0;
         }
 
@@ -85,15 +57,50 @@
                 animation: wipe-reveal 0.8s ease forwards;
             }
 
-            .p-brand-history__image{
+            .p-key-person__image{
                 animation: fade-reveal 0.8s ease forwards;
             }
         }
     }
 
     &__image{
+        display: block;
         width: 100%;
         height: auto;
-        display: block;
+        object-fit: cover;
+        object-position: top;
     }
+
+    &__body{
+        flex: 1;
+    }
+
+    &__name-ja{
+        font-size: 14px;
+        font-weight: 700;
+        letter-spacing: 0.02em;
+        line-height: 1;
+    }
+
+    &__name-en{
+        font-size: 14px;
+        font-weight: 700;
+        letter-spacing: 0.02em;
+        line-height: 1;
+        margin-bottom: 24px;
+
+        &::before{
+            content: "―";
+            display: block;
+            margin: 4px 0;
+        }
+    }
+
+    &__text{
+        font-size: 12px;
+        font-weight: 400;
+        line-height: 2;
+    }
+
+
 }
