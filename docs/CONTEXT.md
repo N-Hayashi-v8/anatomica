@@ -8,9 +8,9 @@ Claude との作業引き継ぎ用メモ。新しい環境でセッションを�
 
 anatomica の模写コーディング。学習目的。
 
-## 現状（2026-04-07 時点）
+## 現状（2026-04-10 時点）
 
-トップページの実装が完了。**子ページ about.html の作成中**。
+トップページ・about.html・masterpiece.html の実装が完了。
 
 ### 完了済みコンポーネント
 
@@ -22,12 +22,19 @@ anatomica の模写コーディング。学習目的。
 - ホバー白マスク（CONTACT / ONLINE STORE）
 - JS・SCSS のリファクタリング・不整合整理
 
-### about.html 進捗
+### about.html
 
-- HTML 構造: 完了（p-about-lead / p-brand-history / p-key-person）
-- `_about-page.scss`: p-about-lead 完了
-- `_brand-history.scss`: grid 設計まで完了（`repeat(4, 1fr)` / gap 20px）、__year・__subtitle レイアウトは次回
-- p-key-person: 未着手
+- p-about-lead / p-brand-history / p-key-person — 完成
+
+### masterpiece.html
+
+- HTML: 2カラム構成（左4・右3アイテム）完成
+- SCSS: `_masterpiece-page.scss`（`p-mp` ブロック）完成
+  - `p-mp__grid`（flex）/ `p-mp__col`（border-right で列分割）
+  - `p-mp__slider`（wipe-reveal / fade-reveal アニメーション付き）
+  - `p-mp__btn`（黒丸・CSS矢印・ホバーで赤）
+  - `p-mp__store-btn`（黒背景ボタン・ホバーで赤）
+- JS: スライダー（index 管理・端でループ・1枚時ボタン非表示）/ infoObserver に `.p-mp__slider` 追加
 
 ---
 
@@ -47,7 +54,7 @@ anatomica の模写コーディング。学習目的。
 
 ### アニメーションパターン
 
-- ワイプ + フェード: `__image-wrap` に `::after`（黒マスク）、img に `opacity: 0`
+- ワイプ + フェード: `__image-wrap`（または `__slider`）に `::after`（黒マスク）、img に `opacity: 0`
 - `is-revealed` クラス付与で animation を起動
 - online-store だけ `::before`（ワイプ）/ `::after`（ホバーマスク）を分離（擬似要素競合回避）
 - CONTACT は `__image-wrap` ではなく `.p-contact` 親に `is-revealed` を付与（テキスト連動のため）
@@ -55,7 +62,7 @@ anatomica の模写コーディング。学習目的。
 ### JS 構成
 
 - `collectionObserver`: `.p-collection__group` を観測 → 子アイテムをstagger順次表示
-- `infoObserver`: 各 `__image-wrap` を個別観測 → `.p-contact` は `closest()` で親を取得
+- `infoObserver`: 各 `__image-wrap` / `.p-mp__slider` を個別観測 → `.p-contact` は `closest()` で親を取得
 - どちらも `$(window).on('load', ...)` の中で observe を開始
 
 ---

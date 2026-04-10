@@ -832,4 +832,137 @@ img {
   font-size: 12px;
   font-weight: 400;
   line-height: 2;
+}
+
+.p-mp__inner {
+  max-width: 1360px;
+}
+.p-mp__grid {
+  display: flex;
+}
+.p-mp__col {
+  flex: 1;
+  padding: 0 40px;
+}
+.p-mp__col:first-child {
+  border-right: 1px solid #1e1b19;
+  padding-left: 0;
+}
+.p-mp__col:last-child {
+  padding-right: 0;
+}
+.p-mp__item {
+  padding-top: 40px;
+  padding-bottom: 50px;
+  border-top: 3px solid #1e1b19;
+}
+.p-mp__title {
+  font-size: 64px;
+  letter-spacing: 0.02em;
+  font-weight: 700;
+  line-height: 1;
+  text-align: center;
+  margin-bottom: 54px;
+}
+.p-mp__subtitle {
+  font-size: 16px;
+  font-weight: 400;
+  letter-spacing: -0.02em;
+  text-align: center;
+  margin-bottom: 40px;
+}
+.p-mp__slider {
+  position: relative;
+  overflow: hidden;
+  width: 400px;
+  margin: 0 auto 40px;
+}
+.p-mp__slider::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: #1e1b19;
+  transform: translateX(-100%);
+  z-index: 10;
+}
+.p-mp__slider.is-revealed::after {
+  animation: wipe-reveal 0.8s ease forwards;
+}
+.p-mp__slider.is-revealed .p-mp__image {
+  animation: fade-reveal 0.8s ease forwards;
+}
+.p-mp__slides {
+  display: flex;
+  transition: transform 0.4s ease;
+}
+.p-mp__slide {
+  flex: 0 0 100%;
+}
+.p-mp__image {
+  display: block;
+  width: 100%;
+  height: auto;
+  opacity: 0;
+}
+.p-mp__btn {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  font-size: 1.5rem;
+  cursor: pointer;
+  width: 28px;
+  height: 28px;
+  border-radius: 50%;
+  background-color: #1e1b19;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: background-color 0.2s ease;
+}
+.p-mp__btn:hover {
+  background-color: #b51b03;
+}
+.p-mp__btn::before {
+  content: "";
+  display: block;
+  width: 7px;
+  height: 7px;
+  border-top: 2px solid #fff;
+  border-right: 2px solid #fff;
+}
+.p-mp__btn--prev {
+  left: 10px;
+}
+.p-mp__btn--prev::before {
+  transform: translate(2px, 0) rotate(-135deg);
+}
+.p-mp__btn--next {
+  right: 10px;
+}
+.p-mp__btn--next::before {
+  transform: translate(-2px, 0) rotate(45deg);
+}
+.p-mp__text {
+  font-size: 14px;
+  line-height: 2;
+  font-weight: 400;
+  letter-spacing: -0.02em;
+}
+.p-mp__store-btn {
+  display: block;
+  width: 400px;
+  padding: 18px;
+  margin: 0 auto;
+  background-color: #1e1b19;
+  color: #fff;
+  text-align: center;
+  font-size: 0.875rem;
+  letter-spacing: 0.05em;
+  border-radius: 4px;
+  margin-top: 40px;
+  transition: background-color 0.2s ease;
+}
+.p-mp__store-btn:hover {
+  background-color: #b51b03;
+  color: #fff;
 }/*# sourceMappingURL=style.css.map */

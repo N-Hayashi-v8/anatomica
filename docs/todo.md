@@ -4,7 +4,7 @@
 
 - [ ] 子ページの作成
   - [x] about.html — 完成
-  - [ ] masterpiece.html — 未着手
+  - [x] masterpiece.html — 完成
 
 ## 完了済み（ログ）
 
