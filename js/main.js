@@ -28,7 +28,7 @@ $(window).on('load', function(){
         });
     },{ threshold: 0.1});
 
-    $('.p-online-store__image-wrap, .p-stockist__image-wrap, .p-contact__image-wrap, .p-brand-history__image-wrap, .p-key-person__image-wrap, .p-mp__slider').each(function() {
+    $('.p-online-store__image-wrap, .p-stockist__image-wrap, .p-contact__image-wrap, .p-brand-history__image-wrap, .p-key-person__image-wrap, .p-mp__slider, .p-flagship__image-wrap').each(function() {
         infoObserver.observe(this);
     });
 

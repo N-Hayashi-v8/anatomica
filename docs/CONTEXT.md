@@ -8,9 +8,9 @@ Claude との作業引き継ぎ用メモ。新しい環境でセッションを�
 
 anatomica の模写コーディング。学習目的。
 
-## 現状（2026-04-10 時点）
+## 現状（2026-04-14 時点）
 
-トップページ・about.html・masterpiece.html の実装が完了。
+トップページ・about.html・masterpiece.html・stockist.html の実装が完了。
 
 ### 完了済みコンポーネント
 
@@ -25,6 +25,17 @@ anatomica の模写コーディング。学習目的。
 ### about.html
 
 - p-about-lead / p-brand-history / p-key-person — 完成
+
+### stockist.html
+
+- HTML: FLAGSHIP STORE（3列グリッド×8カード）/ AVAILABLE LOCATION（4列カラム）完成
+- SCSS: `_flagship.scss`（`p-flagship` ブロック）完成
+  - `p-flagship__grid`（3列グリッド）
+  - `p-flagship__card`（`position: relative` / `border-bottom` / `::before` で縦線）
+  - `p-flagship__image-wrap`（wipe-reveal / fade-reveal アニメーション付き / `height: 300px` + `object-fit: cover`）
+  - `p-flagship__links`（`justify-content: space-between` で map 左・sns 右）
+- `_location.scss` は未作成（次回）
+- JS: `infoObserver` のセレクタに `.p-flagship__image-wrap` を追加済み
 
 ### masterpiece.html
 

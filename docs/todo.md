@@ -5,6 +5,8 @@
 - [ ] 子ページの作成
   - [x] about.html — 完成
   - [x] masterpiece.html — 完成
+  - [x] stockist.html — 完成
+- [ ] _location.scss の作成（AVAILABLE LOCATION セクション）
 
 ## 完了済み（ログ）
 
