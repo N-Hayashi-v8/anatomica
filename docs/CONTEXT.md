@@ -6,13 +6,13 @@ Claude との作業引き継ぎ用メモ。新しい環境でセッションを�
 
 ## プロジェクト概要
 
-anatomica の模写コーディング。学習目的。
+anatomica の模写コーディング。学習目的。2026-04-15 提出済み。
 
-## 現状（2026-04-14 時点）
+## 現状（2026-04-15 時点）
 
-トップページ・about.html・masterpiece.html・stockist.html の実装が完了。
+全ページ実装・コードレビュー修正・提出完了。
 
-### 完了済みコンポーネント
+### 完了済みコンポーネント（トップページ）
 
 - p-header / p-nav / JP-EN トグル
 - p-about / p-collection / p-masterpiece
@@ -20,22 +20,10 @@ anatomica の模写コーディング。学習目的。
 - p-footer（二重線・内部レイアウト）
 - スクロール連動ワイプアニメーション（wipe-reveal / fade-reveal）全域適用
 - ホバー白マスク（CONTACT / ONLINE STORE）
-- JS・SCSS のリファクタリング・不整合整理
 
 ### about.html
 
 - p-about-lead / p-brand-history / p-key-person — 完成
-
-### stockist.html
-
-- HTML: FLAGSHIP STORE（3列グリッド×8カード）/ AVAILABLE LOCATION（4列カラム）完成
-- SCSS: `_flagship.scss`（`p-flagship` ブロック）完成
-  - `p-flagship__grid`（3列グリッド）
-  - `p-flagship__card`（`position: relative` / `border-bottom` / `::before` で縦線）
-  - `p-flagship__image-wrap`（wipe-reveal / fade-reveal アニメーション付き / `height: 300px` + `object-fit: cover`）
-  - `p-flagship__links`（`justify-content: space-between` で map 左・sns 右）
-- `_location.scss` は未作成（次回）
-- JS: `infoObserver` のセレクタに `.p-flagship__image-wrap` を追加済み
 
 ### masterpiece.html
 
@@ -45,7 +33,13 @@ anatomica の模写コーディング。学習目的。
   - `p-mp__slider`（wipe-reveal / fade-reveal アニメーション付き）
   - `p-mp__btn`（黒丸・CSS矢印・ホバーで赤）
   - `p-mp__store-btn`（黒背景ボタン・ホバーで赤）
-- JS: スライダー（index 管理・端でループ・1枚時ボタン非表示）/ infoObserver に `.p-mp__slider` 追加
+- JS: スライダー（index 管理・端でループ・1枚時ボタン非表示）
+
+### stockist.html
+
+- p-flagship（3列グリッド×8カード・ワイプアニメーション・マップ/SNSリンク）— 完成
+- p-location（4列 CSS columns・column-rule・国別グループ一覧）— 完成
+- JS: infoObserver のセレクタに `.p-flagship__image-wrap` を追加済み
 
 ---
 
@@ -54,8 +48,11 @@ anatomica の模写コーディング。学習目的。
 ### SCSS 構成
 
 - FLOCSS/BEM 準拠
-- keyframes は `scss/foundation/_animations.scss` に集約（`wipe-reveal` / `fade-reveal`）
+- keyframes は `scss/foundation/_animations.scss` に集約（`wipe-reveal` / `fade-reveal` / `line-grow`）
 - `scss/style.scss` で `@use "foundation/animations"` をインポート済み
+- 色変数: `$color-text` / `$color-white` / `$color-bg` / `$color-link-hover` / `$color-scrollbar-track`
+- 単色指定は `background-color:` を使用（`background:` ショートハンドは使わない）
+- `rgba(255,255,255,...)` は `rgba(v.$color-white, ...)` で記述
 
 ### レイアウト
 
@@ -72,9 +69,15 @@ anatomica の模写コーディング。学習目的。
 
 ### JS 構成
 
+- `collectionObserver` / `infoObserver` ともに `$(window).on('load', ...)` の中で定義・observe を開始
 - `collectionObserver`: `.p-collection__group` を観測 → 子アイテムをstagger順次表示
 - `infoObserver`: 各 `__image-wrap` / `.p-mp__slider` を個別観測 → `.p-contact` は `closest()` で親を取得
-- どちらも `$(window).on('load', ...)` の中で observe を開始
+
+### HTML リンク規則
+
+- トップページ（index.html）から pages/ 配下: `pages/about.html` 等
+- pages/ 配下から同階層: `about.html` 等（`../` 不要）
+- COLLECTION / ONLINE STORE / CONTACT はページ未作成のため `href="#"`
 
 ---
 

@@ -1,11 +1,5 @@
 @use "../../foundation/variables" as v;
 
-@keyframes line-grow {
-    from { transform: scaleX(0); }
-    to   { transform: scaleX(1); }
-}
-
-
 .p-stockist{
 
     padding-bottom: 40px;
@@ -62,7 +56,7 @@
             content: "";
             position: absolute;
             inset: 0;
-            background: #000;
+            background-color: v.$color-text;
             transform: translateX(-100%);
         }
 

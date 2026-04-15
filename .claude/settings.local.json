@@ -5,7 +5,11 @@
       "Bash(do echo:*)",
       "Read(//c/Users/しごと/htdocs/anatomica/**)",
       "Bash(done)",
-      "Bash(cat scss/layout/*.scss)"
+      "Bash(cat scss/layout/*.scss)",
+      "Bash(grep -n \":-webkit-scrollbar\\\\|::-webkit-scrollbar\" /c/Users/しごと/htdocs/anatomica/scss/object/project/*.scss)",
+      "Bash(grep -n \"background:\" /c/Users/しごと/htdocs/anatomica/scss/object/project/*.scss)",
+      "Bash(grep -n \"background-color:\" /c/Users/しごと/htdocs/anatomica/scss/object/project/*.scss)",
+      "Bash(grep -c \"rgba\\(255,255,255\" /c/Users/しごと/htdocs/anatomica/scss/object/project/*.scss)"
     ]
   }
 }

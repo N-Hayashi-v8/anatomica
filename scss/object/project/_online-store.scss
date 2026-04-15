@@ -30,7 +30,7 @@
             content: "";
             position: absolute;
             inset: 0;
-            background: #000;
+            background-color: v.$color-text;
             transform: translateX(-100%);
             z-index: 1;
         }
@@ -49,13 +49,13 @@
             content: "";
             position: absolute;
             inset: 0;
-            background-color: rgba(255,255,255,0);
+            background-color: rgba(v.$color-white, 0);
             transition: background-color 0.3s ease;
             z-index: 2;
         }
 
         &:hover::after{
-            background-color: rgba(255,255,255,0.3);
+            background-color: rgba(v.$color-white, 0.3);
         }
     }
 

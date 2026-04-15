@@ -1,10 +1,5 @@
 @use "../../foundation/variables" as v;
 
-@keyframes line-grow {
-    from { transform: scaleX(0); }
-    to   { transform: scaleX(1); }
-}
-
 .p-about{
     flex: 0 0 400px;
     padding-right: 40px;

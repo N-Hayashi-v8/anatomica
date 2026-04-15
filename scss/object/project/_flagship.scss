@@ -34,14 +34,14 @@
         margin: 18px 0 0;
         border-bottom: 1px solid v.$color-text;
 
-        &:before{
+        &::before{
             content: "";
             position: absolute;
             left: 0;
             top: 0;
             bottom: 18px;
             width: 1px;
-            background: v.$color-text;
+            background-color: v.$color-text;
         }
 
         &:nth-child(n+7){
@@ -70,7 +70,7 @@
             content: "";
             position: absolute;
             inset: 0;
-            background: v.$color-text;
+            background-color: v.$color-text;
             transform: translateX(-100%);
             z-index: 1;
         }

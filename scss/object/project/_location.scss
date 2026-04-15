@@ -1,0 +1,54 @@
+@use "../../foundation/variables" as v;
+
+.p-location{
+    &__inner{
+        max-width: v.$section-max-width;
+    }
+
+    &__title{
+        font-size: 88px;
+        font-weight: 700;
+        letter-spacing: 0.02em;
+        line-height: 1;
+        margin-bottom: 40px;
+
+        &::before{
+            content: "";
+            display: block;
+            width: 266px;
+            height: 3px;
+            background-color: v.$color-text;
+            margin-top: -40px;
+            margin-bottom: 43px;
+        }
+    }
+
+    &__columns{
+        columns: 4;
+        column-gap: 40px;
+        column-rule: 1px solid v.$color-text;
+    }
+
+    &__group{
+        break-inside: avoid;
+        margin-bottom: 40px;
+    }
+
+    &__country{
+        font-size: 28px;
+        font-weight: 700;
+        letter-spacing: 0.02em;
+        line-height: 1;
+        margin-bottom: 12px;
+    }
+
+    &__list{
+        list-style: none;
+    }
+
+    &__item{
+        font-size: 12px;
+        font-weight: 700;
+        line-height: 2;
+    }
+}

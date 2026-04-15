@@ -29,9 +29,8 @@
         }
 
         &::-webkit-scrollbar-track {
-            background: #e0e0e0;
-    }
-
+            background-color: v.$color-scrollbar-track;
+        }
 
         &::-webkit-scrollbar-thumb {
             background-color: v.$color-text;
@@ -41,7 +40,6 @@
             display: none;
         }
     }
-
 
     &__item{
         position: relative;
@@ -59,7 +57,7 @@
             content: "";
             position: absolute;
             inset: 0;
-            background: #000;
+            background-color: v.$color-text;
             transform: translateX(-100%);
         }
     }

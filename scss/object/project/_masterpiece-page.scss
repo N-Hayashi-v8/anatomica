@@ -56,7 +56,7 @@
             content: "";
             position: absolute;
             inset: 0;
-            background: v.$color-text;
+            background-color: v.$color-text;
             transform: translateX(-100%);
             z-index: 10;
         }
@@ -111,8 +111,8 @@
             display: block;
             width: 7px;
             height: 7px;
-            border-top: 2px solid #fff;
-            border-right: 2px solid #fff;
+            border-top: 2px solid v.$color-white;
+            border-right: 2px solid v.$color-white;
         }
 
         &--prev{
@@ -143,7 +143,7 @@
         padding: 18px;
         margin: 0 auto;
         background-color: v.$color-text;
-        color: #fff;
+        color: v.$color-white;
         text-align: center;
         font-size: 0.875rem;
         letter-spacing: 0.05em;
@@ -153,7 +153,7 @@
 
         &:hover{
             background-color: v.$color-link-hover;
-            color: #fff;
+            color: v.$color-white;
         }
     }
 

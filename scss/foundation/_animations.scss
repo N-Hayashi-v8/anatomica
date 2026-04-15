@@ -11,3 +11,8 @@
     45% { opacity: 1; }
     100%{ opacity: 1; }
 }
+
+@keyframes line-grow{
+    from{ transform: scaleX(0);}
+    to{ transform: scaleX(1);}
+}
